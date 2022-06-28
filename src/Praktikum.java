@@ -8,11 +8,22 @@ public class Praktikum {
         int year = scanner.nextInt();
 
         if (isLeapYear(year)) {
-            // здесь нужно вывести результат
+            System.out.println("12.09." + year);// Високосный если возвращает true
+        } else {
+            System.out.println("13.09." + year); // Не високосный если возвращает false
         }
+
     }
 
     public static boolean isLeapYear(int year) {
-        // здесь нужно определить, является ли переданный год високосным
+        if (year % 400 == 0) {  //кратен 400 - високосный
+            return (true);
+        } else if (year % 100 == 0) { //кратен 100 - не високосный
+                return(false);
+        }
+         else if (year % 4 == 0) { //кратен 4 - високосный
+            return (true);
+        }
+        return false;
     }
-} 
+}
